@@ -43,8 +43,8 @@ const LoginPage: React.FC = () => {
         localStorage.setItem('accessToken', response.data.data.accessToken);
         localStorage.setItem('tokenExpiry', String(Date.now() + response.data.data.accessTokenExpireTime));
         
-        // Redirect to dashboard
-        navigate('/dashboard');
+        // Redirect to job posts page
+        navigate('/job-posts');
       } else {
         setError(response.data.message || 'Login failed');
       }
