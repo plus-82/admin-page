@@ -19,10 +19,15 @@ export const parseError = (error: unknown): ErrorMessage => {
     
     // Check if response has our standard API error format
     if (response && typeof response === 'object' && 'message' in response) {
+      const typedResponse = response as { 
+        message: string; 
+        code?: string; 
+        details?: string 
+      };
       return {
-        message: response.message || 'An error occurred',
-        code: response.code || error.response?.status?.toString(),
-        details: response.details || error.response?.statusText,
+        message: typedResponse.message || 'An error occurred',
+        code: typedResponse.code || error.response?.status?.toString(),
+        details: typedResponse.details || error.response?.statusText,
       };
     }
     
@@ -78,4 +83,5 @@ export const logError = (error: unknown, context?: string): void => {
   );
 };
 
-export default { parseError, logError };
+const errorHandler = { parseError, logError };
+export default errorHandler;

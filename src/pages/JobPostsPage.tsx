@@ -153,6 +153,7 @@ const JobPostsPage: React.FC = () => {
 
   useEffect(() => {
     fetchJobPosts();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentPage, rowCount, orderType, sortBy]);
 
   const handleSearch = (e: React.FormEvent) => {

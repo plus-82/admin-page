@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Input from '../../common/FormElements/Input';
 import Button from '../../common/Button/Button';
-import { UserFilters as UserFiltersType, RoleType } from '../../../types/user';
+import { UserFilters as UserFiltersType } from '../../../types/user';
 import './UserFilters.css';
 
 interface UserFiltersProps {

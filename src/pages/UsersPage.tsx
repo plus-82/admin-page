@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import UserFilters from '../components/feature/users/UserFilters';
 import UsersTable from '../components/feature/users/UsersTable';
-import { User, UserFilters as UserFiltersType, Paginated } from '../types/user';
+import { User, UserFilters as UserFiltersType } from '../types/user';
 import userService from '../services/user.service';
 import usePagination from '../hooks/usePagination';
 import '../styles/UsersPage.css';
@@ -44,6 +44,7 @@ const UsersPage: React.FC = () => {
 
   useEffect(() => {
     fetchUsers();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page, rowsPerPage, filters]);
 
   const handleFilterChange = (newFilters: UserFiltersType) => {

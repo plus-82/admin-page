@@ -46,8 +46,8 @@ const UsersTable: React.FC<UsersTableProps> = ({
         id: 'roleType',
         header: 'Role',
         accessor: (user) => (
-          <span className={`role-badge role-${user.roleType.toLowerCase()}`}>
-            {user.roleType}
+          <span className={`role-badge role-${user.roleType ? user.roleType.toLowerCase() : 'unknown'}`}>
+            {user.roleType || 'Unknown'}
           </span>
         ),
       },

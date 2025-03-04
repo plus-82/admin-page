@@ -15,7 +15,7 @@ const Input: React.FC<InputProps> = ({
   id,
   ...props
 }) => {
-  const inputId = id || `input-${label?.toLowerCase().replace(/\s+/g, '-')}`;
+  const inputId = id || (label ? `input-${label.toLowerCase().replace(/\s+/g, '-')}` : `input-${Math.random().toString(36).substring(2, 9)}`);
   
   const classes = [
     'form-input',
